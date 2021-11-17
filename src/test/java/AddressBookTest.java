@@ -12,13 +12,14 @@ public class AddressBookTest {
     HashSet<ContactDetails> contact = new HashSet<>();
 
     @Test
-    public void WhenGivenContactDetails_addToBook_WhenAddedShouldReturnTrue(){
+    public void WhenGivenContactDetails_addToBook_WhenAddedShouldReturnTrue() {
 
-        ContactDetails c = new ContactDetails("deepak","kumbhar","warana","kolhapur",
-                "mah",416312,
-                9850,"deepak@gmail.com");
+        ContactDetails c = new ContactDetails("deepak", "kumbhar", "warana",
+                "kolhapur", "mah", 416312, 9850, "deepak@gmail.com");
         boolean output = contact.add(c);
 
         Assertions.assertTrue(output);
+
+
     }
 }

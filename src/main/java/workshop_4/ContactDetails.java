@@ -4,8 +4,8 @@ package workshop_4;
 import java.util.Objects;
 
 /*purpose:provide data declaration for contacts
-*
-* */
+ *
+ * */
 
 public class ContactDetails {
 
@@ -30,6 +30,10 @@ public class ContactDetails {
         this.zip = zip;
         this.phone = phone;
         this.email = email;
+
+    }
+
+    public ContactDetails() {
 
     }
 
@@ -100,7 +104,7 @@ public class ContactDetails {
 
     @Override
     public int hashCode() {
-        return Objects.hash(first_Name,last_Name);
+        return Objects.hash(first_Name, last_Name);
     }
 
 

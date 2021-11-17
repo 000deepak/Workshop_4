@@ -18,52 +18,52 @@ public class AddressBookMain {
     public static void main(String[] args) throws AddressBookException {
         System.out.println("welcome to addressBook program");
 
-           try{
-               if(!addContact()){
-                   throw new AddressBookException("enter correct data");
-               }
+        try {
+            if (!addContact()) {
+                throw new AddressBookException("enter correct data");
+            }
 
-           }catch (AddressBookException a){
-               System.out.println();
-               a.printStackTrace();
-           }catch (Exception e){
-               System.out.println();
-               e.printStackTrace();
-           }
+        } catch (AddressBookException a) {
+            System.out.println();
+            a.printStackTrace();
+        } catch (Exception e) {
+            System.out.println();
+            e.printStackTrace();
+        }
 
         showContacts(contact);
     }
 
     /*purpose:to add contact to addressBook.
-    *
-    */
-    public static boolean addContact() throws AddressBookException{
-        System.out.println("enter first name");
-        String first_Name= sc.next();
-        System.out.println("enter last name");
-        String last_Name= sc.next();
-        System.out.println("enter address");
-        String address= sc.next();
-        System.out.println("enter city");
-        String city= sc.next();
-        System.out.println("enter state");
-        String state= sc.next();
-        System.out.println("enter zip");
-        int zip= sc.nextInt();
-        System.out.println("enter phone");
-        long phone= sc.nextInt();
-        System.out.println("enter email");
-        String email= sc.next();
+     *
+     */
+    public static boolean addContact() throws AddressBookException {
 
-        ContactDetails con = new ContactDetails(first_Name,last_Name, address,  city,  state, zip,
-                phone, email);
+        ContactDetails con = new ContactDetails();
+
+        System.out.println("enter first name");
+        con.setFirst_Name(sc.next());
+        System.out.println("enter last name");
+        con.setLast_Name(sc.next());
+        System.out.println("enter address");
+        con.setAddress(sc.next());
+        System.out.println("enter city");
+        con.setCity(sc.next());
+        System.out.println("enter state");
+        con.setState(sc.next());
+        System.out.println("enter zip");
+        con.setZip(sc.nextInt());
+        System.out.println("enter phone");
+        con.setPhone(sc.nextInt());
+        System.out.println("enter email");
+        con.setEmail(sc.next());
 
         boolean added = contact.add(con);
         return added;
     }
 
-    public static void showContacts (HashSet<ContactDetails> contact) throws AddressBookException{
-        for(ContactDetails c:contact){
+    public static void showContacts(HashSet<ContactDetails> contact) throws AddressBookException {
+        for (ContactDetails c : contact) {
             System.out.println(c);
         }
     }
