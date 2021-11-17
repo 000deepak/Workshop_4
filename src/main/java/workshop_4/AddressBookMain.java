@@ -2,6 +2,13 @@ package workshop_4;
 
 import java.util.HashSet;
 import java.util.Scanner;
+/*
+ * @Welcome -The  program implements an application of addressbook problem.
+ * @author  -deepak
+ * @version -1.0
+ * @since   -2021-11-17
+ */
+
 
 public class AddressBookMain {
     static Scanner sc = new Scanner(System.in);
@@ -12,14 +19,24 @@ public class AddressBookMain {
         System.out.println("welcome to addressBook program");
 
            try{
-               addContact();
+               if(!addContact()){
+                   throw new AddressBookException("enter correct data");
+               }
+
+           }catch (AddressBookException a){
+               System.out.println();
+               a.printStackTrace();
            }catch (Exception e){
                System.out.println();
                e.printStackTrace();
            }
+
         showContacts(contact);
     }
 
+    /*purpose:to add contact to addressBook.
+    *
+    */
     public static boolean addContact() throws AddressBookException{
         System.out.println("enter first name");
         String first_Name= sc.next();
@@ -32,9 +49,9 @@ public class AddressBookMain {
         System.out.println("enter state");
         String state= sc.next();
         System.out.println("enter zip");
-        String zip= sc.next();
+        int zip= sc.nextInt();
         System.out.println("enter phone");
-        String phone= sc.next();
+        long phone= sc.nextInt();
         System.out.println("enter email");
         String email= sc.next();
 

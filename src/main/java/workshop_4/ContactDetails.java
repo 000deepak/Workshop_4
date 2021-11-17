@@ -3,6 +3,10 @@ package workshop_4;
 
 import java.util.Objects;
 
+/*purpose:provide data declaration for contacts
+*
+* */
+
 public class ContactDetails {
 
     private String first_Name;
@@ -10,13 +14,13 @@ public class ContactDetails {
     private String address;
     private String city;
     private String state;
-    private String zip;
-    private String phone;
+    private int zip;
+    private long phone;
     private String email;
 
 
-    public ContactDetails(String first_Name, String last_Name, String address, String city, String state, String zip,
-                          String phone, String email) {
+    public ContactDetails(String first_Name, String last_Name, String address, String city, String state, int zip,
+                          long phone, String email) {
         super();
         this.first_Name = first_Name;
         this.last_Name = last_Name;
@@ -69,19 +73,19 @@ public class ContactDetails {
         this.state = state;
     }
 
-    public String getZip() {
+    public int getZip() {
         return zip;
     }
 
-    public void setZip(String zip) {
+    public void setZip(int zip) {
         this.zip = zip;
     }
 
-    public String getPhone() {
+    public long getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(long phone) {
         this.phone = phone;
     }
 
